@@ -3,6 +3,7 @@ var express = require("express");
 var router = express.Router();
 
 var orm = require("../config/orm.js");
+var burger = require("../models/burger.js")
 
 // CREATE
 router.post("/api/burger", function(req, res) {

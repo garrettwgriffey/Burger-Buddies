@@ -1,5 +1,6 @@
 var orm = require("../config/orm.js");
 
+// Calls the ORM functions using burger specific input for the ORM
 var burgers = {
   all: function(cb) {
     orm.all("burgers", function(res) {
