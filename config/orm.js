@@ -18,8 +18,12 @@ var orm = {
 
   },
 
-  updateOne: function(){
-
+  updateOne: function(id, cb){
+    var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
+    connection.query(queryString, id, function(err, result) {
+      if (err) throw err;
+      cb(result);
+    });
   }
 };
 
