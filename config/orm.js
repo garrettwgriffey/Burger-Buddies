@@ -29,6 +29,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+// SQL statement functions
 var orm = {
   selectAll: function(cb) {
     var queryString = "SELECT * FROM burgers";
@@ -53,8 +54,23 @@ var orm = {
       if (err) throw err;
       cb(result);
     });
+  },
+  
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
   }
 };
+
 
 module.exports = orm;
 
