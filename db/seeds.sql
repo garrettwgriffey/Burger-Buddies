@@ -1,4 +1,4 @@
-USE burger;
+USE burger_db;
 
 /* Insert 3 Rows into your new table */
 INSERT INTO burgers (burger_name)
