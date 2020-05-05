@@ -3,14 +3,12 @@ var mysql = require("mysql");
 
 
 var connection = mysql.createConnection(
-  process.env.JAWSDB_URL || {
-  host: "localhost",
+  {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PW,
   port: 3306,
-  user: "root",
-  // user: process.env.USER_NAME,
-  password: "root",
-  // password: process.env.USER_PWD,
-  database: "burger_db"
+  database: process.env.USER_NAME
 });
 
 // Makes Connection
