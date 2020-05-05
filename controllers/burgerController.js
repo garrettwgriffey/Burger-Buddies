@@ -2,26 +2,24 @@ var express = require("express");
 
 var router = express.Router();
 
-var orm = require("../config/orm.js");
 var burger = require("../models/burger.js");
 
 // CREATE
 router.post("/api/burger", function(req, res) {
     const burger_name = req.body.burger_name;
 
-    orm.insertOne(burger_name, function(data) {
+    burger.create(burger_name, function(data) {
         if (data.affectedRows === 1) {
-            res.json({
-                msg: "Burger succesfully added."
-            });
+            res.redirect("/");
+            
         }
     });
 });
 
 // READ
 router.get("/", function(req, res) {
-    orm.selectAll(function(data) {
-        res.render("index", { burgers: data})
+    burger.all(function(data) {
+        res.render("index", { burgers: data});
     });
   });
 
@@ -29,7 +27,7 @@ router.get("/", function(req, res) {
 router.put("/api/burger/id:", function(req, res) {
     const id = req.params.id;
 
-    orm.updateOne(id, function(data) {
+    burger.update(id, function(data) {
         if (data.affectedRows === 1) {
             res.json({
                 msg: "Burger succesfully updated."
@@ -38,18 +36,5 @@ router.put("/api/burger/id:", function(req, res) {
     });
 });
 
-// DELETE
-router.delete("/api/burger/id:", function(req, res) {
-    const id = req.params.id;
-
-    orm.deleteOne(id, function(data) {
-        if (data.affectedRows === 1) {
-            res.json({
-                msg: "Burger succesfully deleted."
-            });
-        }
-    });
-});
-
 // Export router
-module.export = router;
+module.exports = router;
