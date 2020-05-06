@@ -8,7 +8,7 @@ var connection = mysql.createConnection(
   user: process.env.DB_USER,
   password: process.env.DB_PW,
   port: 3306,
-  database: process.env.USER_NAME
+  database: process.env.DB_DB
 });
 
 // Makes Connection
