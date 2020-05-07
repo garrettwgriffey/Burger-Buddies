@@ -9,3 +9,5 @@ VALUES ("Hawaiian burger");
 INSERT INTO burgers (burger_name)
 VALUES ("Avocado burger");
 
+INSERT INTO burgers (burger_name)
+VALUES ("Barbecue burger");
