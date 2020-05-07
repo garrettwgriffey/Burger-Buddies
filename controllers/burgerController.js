@@ -24,7 +24,7 @@ router.get("/", function(req, res) {
   });
 
 // UPDATE
-router.put("/api/burger/id:", function(req, res) {
+router.put("/api/burger/:id", function(req, res) {
     const id = req.params.id;
 
     burger.update(id, function(data) {
