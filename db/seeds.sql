@@ -1,6 +1,5 @@
-USE burger_db;
+USE gbshr422dd9au6fi;
 
-/* Insert 3 Rows into your new table */
 INSERT INTO burgers (burger_name)
 VALUES ("Veggie burger");
 
