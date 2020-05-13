@@ -34,6 +34,8 @@ Garrett Wells Griffey
 
 ## 
 
+<img src = "assets\burgerBuddies.gif"> 
+
 <br />
 
 ##### **License** 
